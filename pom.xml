@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>top.yuyufeng</groupId>
-    <artifactId>SessionShare</artifactId>
+    <artifactId>session-share</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>SessionShare-test</module>
-        <module>SessionShare-core</module>
+        <module>session-share-core</module>
+        <module>session-share-test</module>
     </modules>
 
     <properties>

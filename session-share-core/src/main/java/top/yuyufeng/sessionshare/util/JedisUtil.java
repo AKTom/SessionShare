@@ -11,12 +11,16 @@ import redis.clients.jedis.Jedis;
 public class JedisUtil<T> {
     private static Jedis jedis;
 
-    public static void init(Jedis jedis) {
-        jedis =  jedis;
+    public static void init(Jedis jedisSet) {
+        jedis =  jedisSet;
     }
 
     public static void setObject(String key, Object object, int expire) {
         jedis.setex(key.getBytes(), expire, ProtostuffUtil.serializer(object));
+    }
+
+    public static Jedis getJedis() {
+        return jedis;
     }
 
     public static <T> T getObject(String key, Class clazz) {

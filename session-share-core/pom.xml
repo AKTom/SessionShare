@@ -3,14 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>SessionShare</artifactId>
+        <artifactId>session-share</artifactId>
         <groupId>top.yuyufeng</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SessionShare-core</artifactId>
+    <artifactId>session-share-core</artifactId>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

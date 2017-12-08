@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author yuyufeng
  * @date 2017/8/2
  */
-public class SessionHandle<T> {
+public class SessionHandler<T> {
     private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
     //采用单点登录

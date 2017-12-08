@@ -1,7 +1,7 @@
 package top.yuyufeng.sessionshare.servlet;
 
 import top.yuyufeng.sessionshare.constant.SessionConstant;
-import top.yuyufeng.sessionshare.core.SessionHandle;
+import top.yuyufeng.sessionshare.core.SessionHandler;
 import top.yuyufeng.sessionshare.vo.UserVO;
 
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/loginServlet")
 public class LoginServlet extends HttpServlet {
-    private SessionHandle<UserVO> sessionHandle = new SessionHandle<UserVO>();
+    private SessionHandler<UserVO> sessionHandle = new SessionHandler<UserVO>();
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
 //        request.getRequestDispatcher("/WEB-INF/message.jsp").forward(request, response);
     }
 
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }

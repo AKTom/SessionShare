@@ -1,5 +1,7 @@
 package top.yuyufeng.sessionshare.listener;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 import top.yuyufeng.sessionshare.util.JedisUtil;
 
@@ -22,6 +24,9 @@ public class InitListener implements ServletContextListener {
     private final static String CONFIG_PATH = "/ssc-config.properties";
     private final static String REDIS_HOST = "redis.host";
     private final static String REDIS_PORT = "redis.port";
+    private final static String REDIS_PASSWORD = "redis.password";
+
+    private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -32,14 +37,16 @@ public class InitListener implements ServletContextListener {
             in = new FileInputStream(this.getClass().getResource(CONFIG_PATH).getFile());
             pro.load(in);
             in.close();
-            for (Object o : pro.keySet()) {
-                System.out.println(pro.get(o));
-            }
+
+            //redis初始化
             Jedis jedis = new Jedis(pro.get(REDIS_HOST).toString(), Integer.valueOf(pro.get(REDIS_PORT).toString()));
+            jedis.auth(pro.get(REDIS_PASSWORD).toString());
             JedisUtil.init(jedis);
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        } catch (Exception e) {
+            LOG.error("session-share 初始化失败 " + e.getMessage());
         }
+        LOG.info("redis ping:" + JedisUtil.getJedis().ping());
     }
 
     @Override

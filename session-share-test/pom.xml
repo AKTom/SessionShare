@@ -1,18 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <artifactId>SessionShare</artifactId>
+        <artifactId>session-share</artifactId>
         <groupId>top.yuyufeng</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>SessionShare-test</artifactId>
+    <artifactId>session-share-test</artifactId>
     <packaging>war</packaging>
-    <name>SessionShare-test Maven Webapp</name>
+    <name>session-share-test Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <build>
-        <finalName>SessionShare-test</finalName>
+        <finalName>session-share-test</finalName>
     </build>
     <dependencies>
         <!-- JSP servlet start-->
@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>top.yuyufeng</groupId>
-            <artifactId>SessionShare-core</artifactId>
+            <artifactId>session-share-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
