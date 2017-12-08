@@ -12,7 +12,6 @@ import java.io.IOException;
 @WebFilter(filterName = "SessionFilter", urlPatterns = "/*")
 public class SessionFilter implements Filter {
     private SessionHandler<UserVO> sessionHandle = new SessionHandler<UserVO>();
-
     @Override
     public void destroy() {
     }

@@ -1,5 +1,8 @@
 package top.yuyufeng.sessionshare.vo;
 
+/**
+ * @author yuyufeng
+ */
 public class UserVO {
     private String username;
     private String password;

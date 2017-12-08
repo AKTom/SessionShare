@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author yuyufeng
+ */
 @WebServlet(name = "QuitServlet", urlPatterns = "/quitServlet")
 public class QuitServlet extends HttpServlet {
     private SessionHandler<UserVO> sessionHandle = new SessionHandler<>();

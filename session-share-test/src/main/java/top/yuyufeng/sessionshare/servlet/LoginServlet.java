@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author yuyufeng
+ */
 @WebServlet(name = "LoginServlet", urlPatterns = "/loginServlet")
 public class LoginServlet extends HttpServlet {
     private SessionHandler<UserVO> sessionHandle = new SessionHandler<UserVO>();
