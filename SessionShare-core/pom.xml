@@ -57,5 +57,25 @@
             <version>1.0.10</version>
         </dependency>
         <!-- JSP protostuff end-->
+
+        <!-- java日志： slf4j,log4j,logback,common-looging slf4j是规范/接口 使用：slf4j,logback start-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <!-- 实现slf4j接口并整合 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <!-- java日志： slf4j,log4j,logback,common-looging slf4j是规范/接口 使用：slf4j,logback end-->
+
     </dependencies>
 </project>

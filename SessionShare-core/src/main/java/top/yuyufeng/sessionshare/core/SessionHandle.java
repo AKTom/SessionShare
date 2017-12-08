@@ -1,6 +1,8 @@
 package top.yuyufeng.sessionshare.core;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import top.yuyufeng.sessionshare.constant.SessionConstant;
 import top.yuyufeng.sessionshare.util.CookieUtil;
 import top.yuyufeng.sessionshare.util.JedisUtil;
@@ -11,9 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Seession处理类
- * Created by yuyufeng on 2017/8/2.
+ *
+ * @author yuyufeng
+ * @date 2017/8/2
  */
 public class SessionHandle<T> {
+    private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
     //采用单点登录
     public T getSessionObject(HttpServletRequest httpServletRequest, String sessionKey, Class clazz) {
@@ -27,7 +32,7 @@ public class SessionHandle<T> {
             //使用redis获取原cookie的value
             t = JedisUtil.getObject(SessionConstant.SESSION_PREFIX + cookieValue, clazz);
         } catch (Exception e) {
-            System.out.println("从redis获取用户失败 " + e);
+            LOG.error("从redis获取数据失败" + e);
         }
         return t;
     }
@@ -47,7 +52,7 @@ public class SessionHandle<T> {
                 //删除redis记录的session value
                 JedisUtil.remove(SessionConstant.SESSION_PREFIX + cookieValue);
             } catch (Exception e) {
-                System.out.println("从redis删除用户失败 " + e);
+                LOG.error("从redis删除数据失败" + e);
             }
         }
         //删除cookie记录的session key

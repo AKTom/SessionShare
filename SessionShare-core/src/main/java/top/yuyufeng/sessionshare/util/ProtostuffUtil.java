@@ -12,6 +12,10 @@ import com.dyuproject.protostuff.runtime.RuntimeSchema;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Protostuff序列化工具类
+ * @author yuyufeng
+ */
 public class ProtostuffUtil {
 
     private static Map<Class<?>, Schema<?>> cachedSchema = new ConcurrentHashMap<Class<?>, Schema<?>>();

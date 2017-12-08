@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * cookie工具
+ * @author yuyufeng
  */
 public class CookieUtil {
     public static void setCookie(HttpServletResponse httpServletResponse, String cookieName, String cookieValue) {
